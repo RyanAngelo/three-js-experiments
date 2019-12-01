@@ -1,0 +1,10 @@
+{
+  "name": "tree-growth",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Ryan Angelo",
+  "license": "MIT",
+  "dependencies": {
+    "three": "^0.111.0"
+  }
+}
