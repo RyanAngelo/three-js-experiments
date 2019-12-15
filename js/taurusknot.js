@@ -41,7 +41,7 @@ function init() {
     rectLightMesh.add( rectLightMeshBack );
 
     var matStdObjects = new THREE.MeshStandardMaterial( { color: 0xA00000, roughness: 0, metalness: 0 } );
-    var geoKnot = new THREE.TorusKnotBufferGeometry( 1.5, 0.5, 100, 16 );
+    var geoKnot = new THREE.TorusKnotBufferGeometry( 5, 1, 100, 16 );
     var mshStdKnot = new THREE.Mesh( geoKnot, matStdObjects );
     mshStdKnot.position.set( 5, 5, 0 );
     mshStdKnot.castShadow = true;
