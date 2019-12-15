@@ -3,9 +3,6 @@
     import { RectAreaLightUniformsLib } from '../node_modules/three/examples/jsm/lights/RectAreaLightUniformsLib.js';
 
     var camera, scene, renderer;
-    var cone;
-
-    var targetRotation = 0;
     var rectLight;
     var param = {};
 
@@ -43,13 +40,13 @@ function init() {
     var rectLightMeshBack = new THREE.Mesh( new THREE.PlaneBufferGeometry(), new THREE.MeshBasicMaterial( { color: 0x080808 } ) );
     rectLightMesh.add( rectLightMeshBack );
 
-    var matStdObjects = new THREE.MeshStandardMaterial( { color: 0x0000FF, roughness: 0, metalness: 0 } );
-    var coneGeometry = new THREE.ConeGeometry( 10, 10, 32 );
-    var mshStdCone = new THREE.Mesh( coneGeometry, matStdObjects );
-    mshStdCone.position.set( 5, 5, 0 );
-    mshStdCone.castShadow = true;
-    mshStdCone.receiveShadow = true;
-    scene.add( mshStdCone )
+    var matStdObjects = new THREE.MeshStandardMaterial( { color: 0xA00000, roughness: 0, metalness: 0 } );
+    var geoKnot = new THREE.TorusKnotBufferGeometry( 1.5, 0.5, 100, 16 );
+    var mshStdKnot = new THREE.Mesh( geoKnot, matStdObjects );
+    mshStdKnot.position.set( 5, 5, 0 );
+    mshStdKnot.castShadow = true;
+    mshStdKnot.receiveShadow = true;
+    scene.add( mshStdKnot )
 
     param = {
         motion: true,
@@ -62,7 +59,7 @@ function init() {
     };
 
     var controls = new OrbitControls( camera, renderer.domElement );
-    controls.target.copy( mshStdCone.position );
+    controls.target.copy( mshStdKnot.position );
     controls.update();
 }
 

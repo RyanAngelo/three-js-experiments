@@ -5,6 +5,7 @@
   "author": "Ryan Angelo",
   "license": "MIT",
   "dependencies": {
+    "jquery": "^3.4.1",
     "three": "^0.111.0"
   }
 }
