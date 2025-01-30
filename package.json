@@ -1,11 +1,12 @@
 {
-  "name": "tree-growth",
+  "name": "three-js-experiments",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Ryan Angelo",
   "license": "MIT",
   "dependencies": {
-    "jquery": "^3.4.1",
-    "three": "^0.137.0"
+    "jquery": "^3.7.1",
+    "three": "^0.158.0"
   }
 }
+

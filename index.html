@@ -5,6 +5,73 @@
 		<title>Three</title>
 		<link rel="stylesheet" href="/css/main.css">
 		<script src="./node_modules/jquery/dist/jquery.js"></script>
+		<style>
+			canvas {
+				position: fixed;
+				top: 0;
+				left: 0;
+				z-index: 1;
+			}
+
+			.controls-panel {
+				position: fixed;
+				top: 20px;
+				left: 20px;
+				background: rgba(255, 255, 255, 0.9);
+				padding: 20px;
+				border-radius: 10px;
+				font-family: Arial, sans-serif;
+				box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+				min-width: 250px;
+				z-index: 2;
+			}
+
+			.control-group {
+				background: rgba(255, 255, 255, 0.8);
+				padding: 15px;
+				margin-bottom: 15px;
+				border-radius: 8px;
+				border: 1px solid rgba(0, 0, 0, 0.1);
+			}
+
+			.control-group:last-child {
+				margin-bottom: 0;
+			}
+
+			.control-group h3 {
+				margin: 0 0 10px 0;
+				font-size: 16px;
+				color: #333;
+			}
+
+			.slider-container {
+				margin: 10px 0;
+			}
+
+			.slider-container label {
+				display: block;
+				margin-bottom: 5px;
+				color: #555;
+				font-size: 14px;
+			}
+
+			.slider-container input {
+				width: 100%;
+				margin: 5px 0;
+			}
+
+			.value-display {
+				display: inline-block;
+				margin-left: 10px;
+				min-width: 30px;
+				color: #666;
+			}
+
+			#nav-placeholder {
+				position: relative;
+				z-index: 2;
+			}
+		</style>
 	</head>
 	<body>
 		<!--Navigation bar-->
@@ -16,5 +83,36 @@
 		});
 		</script>
 
+		<div class="controls-panel">
+			<div class="control-group">
+				<h3>Wind Control</h3>
+				<div class="slider-container">
+					<label for="wind-slider">Wind Strength: <span id="wind-value">0.5</span></label>
+					<input type="range" id="wind-slider" min="0" max="2" step="0.1" value="0.5">
+				</div>
+			</div>
+
+			<div class="control-group">
+				<h3>Sun Position</h3>
+				<div class="slider-container">
+					<label for="sun-azimuth">Sun Angle: <span id="sun-azimuth-value">45</span>°</label>
+					<input type="range" id="sun-azimuth" min="0" max="360" step="1" value="45">
+				</div>
+				<div class="slider-container">
+					<label for="sun-elevation">Sun Height: <span id="sun-elevation-value">60</span>°</label>
+					<input type="range" id="sun-elevation" min="0" max="90" step="1" value="60">
+				</div>
+			</div>
+		</div>
+
+		<script type="importmap">
+			{
+				"imports": {
+					"three": "./node_modules/three/build/three.module.js",
+					"three/examples/jsm/": "./node_modules/three/examples/jsm/"
+				}
+			}
+		</script>
+		<script type="module" src="js/tree.js"></script>
 	</body>
 </html>
