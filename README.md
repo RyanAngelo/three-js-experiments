@@ -52,16 +52,6 @@ python3 -m http.server
   - Right click + drag: Pan
   - Scroll wheel: Zoom in/out
 
-## Technical Details
-
-- Built with Three.js version 0.158.0
-- Uses ES6 modules
-- Implements modern WebGL features:
-  - Shadow mapping
-  - Dynamic lighting
-  - Area lights
-  - Material properties
-
 ## Project Structure
 
 ```
